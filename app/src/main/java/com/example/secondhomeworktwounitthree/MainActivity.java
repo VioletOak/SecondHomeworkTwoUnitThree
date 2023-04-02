@@ -49,11 +49,12 @@ public class MainActivity extends AppCompatActivity {
                             && y > (yCat - deltaCat)) {
                         Toast toast = Toast.makeText(getApplicationContext(),
                                 R.string.successful_search, Toast.LENGTH_SHORT);
-                        toast.setGravity(Gravity.LEFT, (int) xCat, (int) yCat);
+                        
                         LinearLayout toastContainer = (LinearLayout) toast.getView();
                         ImageView cat = new ImageView(getApplicationContext());
                         cat.setImageResource(R.drawable.catone);
                         toastContainer.addView(cat, 1);
+                        toast.setGravity(Gravity.LEFT|Gravity.TOP, (int) xCat, (int) yCat);
                         toast.show();
                     }
                     break;
